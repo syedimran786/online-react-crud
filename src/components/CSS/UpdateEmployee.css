@@ -1,0 +1,50 @@
+.updateemp
+{
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 30px 2px black;
+}
+.updateemp h1
+{
+    text-align: center;
+}
+
+.updateemp div
+{
+    margin-top: 15px;
+}
+
+.updateemp div input,.updateemp div select
+{
+    width: 100%;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+}
+
+.updateemp div label
+{
+    font-weight: bold;
+    line-height: 25px;
+} 
+
+.updateemp div input:focus
+{
+    outline: 1px solid blue;
+}
+
+.btn-update-form
+{
+    background-color: rgb(11, 61, 102);
+}
+
+.btn-update-form:active
+{
+    background-color:rgb(29, 83, 128);
+}

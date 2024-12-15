@@ -1,0 +1,45 @@
+.loginemp
+{
+    width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 30px 2px black;
+}
+.loginemp h1
+{
+    text-align: center;
+}
+
+.loginemp div
+{
+    margin-top: 15px;
+}
+
+.loginemp div input
+{
+    width: 100%;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.loginemp div input:focus
+{
+    outline: 1px solid blue;
+}
+
+.btn-login
+{
+    background-color: rgb(11, 102, 46);
+}
+
+.btn-login:active
+{
+    background-color:rgb(18, 175, 109);
+}

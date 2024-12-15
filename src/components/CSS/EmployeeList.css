@@ -1,0 +1,52 @@
+table,td,th
+{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+table
+{
+    margin: 50px auto;
+    width: 80%;
+}
+table tr:hover
+{
+    background-color: #cdc0ce;
+}
+td,th
+{
+    padding: 10px;
+}
+.btn-update
+{
+    background-color: rgb(26, 94, 26);
+}
+
+.btn-update:active
+{
+    background-color: rgb(9, 77, 9);
+}
+
+.btn-view
+{
+    background-color: rgb(24, 79, 116);
+}
+
+.btn-view:active
+{
+    background-color: rgb(25, 95, 112);
+}
+
+.btn-delete
+{
+    background-color: rgb(116, 24, 24);
+}
+
+.btn-delete:active
+{
+    background-color: rgb(192, 30, 30);
+}
+
+.ename
+{
+    text-transform: capitalize;
+}

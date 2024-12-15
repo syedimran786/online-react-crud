@@ -1,0 +1,50 @@
+.addemp
+{
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 30px 2px black;
+}
+.addemp h1
+{
+    text-align: center;
+}
+
+.addemp div
+{
+    margin-top: 15px;
+}
+
+.addemp div input,.addemp div select
+{
+    width: 100%;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+}
+
+.addemp div label
+{
+    font-weight: bold;
+    line-height: 25px;
+} 
+
+.addemp div input:focus
+{
+    outline: 1px solid blue;
+}
+
+.btn-add
+{
+    background-color: rgb(9, 185, 9);
+}
+
+.btn-add:active
+{
+    background-color:rgb(38, 190, 38) ;
+}

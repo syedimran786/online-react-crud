@@ -1,0 +1,13 @@
+.popup-message
+{
+    margin: 20px auto;
+    background-color: rgb(36, 128, 36);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 2px 2px 30px 3px blue;
+    width: 600px;
+    color: white;
+    font-size: 20px;
+}
