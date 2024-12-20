@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./CSS/Login.css"
+import axios from 'axios';
 
 function Login() {
 
@@ -10,9 +11,13 @@ function Login() {
         setedata({...edata,[name]:value})
     }
 
-    let loginEmployee=(e)=>
+    let loginEmployee=async(e)=>
         {
             e.preventDefault();
+            let res=await axios.post('http://localhost:4000/api/v1/emplogin',edata,{
+              withCredentials:true
+            });;
+            console.log(res)
         }
     
 
@@ -20,7 +25,7 @@ function Login() {
     <form className='loginemp' onSubmit={loginEmployee}>
         <h1>Login Form</h1>
       <div>
-        <input type="text" placeholder='Fullname' name="name" onChange={changeEdata}/>
+        <input type="text" placeholder='Fullname' name="email" onChange={changeEdata}/>
       </div>
       <div>
         <input type="password"  placeholder='Password' name="password" onChange={changeEdata}/>
