@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./CSS/AddEmployee.css"
 import axios from 'axios';
 import Popup from './Popup';
+import {toast} from "react-hot-toast"
 
 function AddEmployee() {
 
@@ -19,12 +20,20 @@ function AddEmployee() {
 
            try
            {
-            let resp=await axios.post("http://localhost:4000/api/v1/addemp",edata);
-            // console.log(resp);
-            setshowpopup(true);
+            let resp=await axios.post("http://localhost:4000/api/v1/addemp",edata,{
+              withCredentials:true
+            });
+            console.log(resp);
+            if(resp.status===200)
+            {
+              toast.success(resp.data.message);
+            }
+            //! below state update is to display the custom popup
+            // setshowpopup(true);
            }
            catch(err)
            {
+            toast.error(err.response.data.message)
             console.log(err);
            }
         }
@@ -32,8 +41,9 @@ function AddEmployee() {
 
   return (
    <>
-   {showpopup && <Popup message="Employee Added Sucessfully" setshowpopup={setshowpopup}/>}
-    <form className='addemp' onSubmit={addEmployee}>
+    {/*  below commented code is to display the custom popup when showpopup is true */}
+   {/* {showpopup && <Popup message="Employee Added Sucessfully" setshowpopup={setshowpopup}/>} */}
+    <form className='addemp' onSubmit={addEmployee} autoComplete='on'>
         <h1>Employee Registration Form</h1>
       <div>
         <input type="text" placeholder='Fullname' name="name" onChange={changeEdata}/>

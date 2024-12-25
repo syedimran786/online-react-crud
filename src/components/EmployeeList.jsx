@@ -3,6 +3,7 @@ import "./CSS/EmployeeList.css"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Popup from './Popup';
+import { toast } from 'react-hot-toast';
 
 function EmployeeList() {
 let [emplist,setemplist]=useState([]);
@@ -18,6 +19,7 @@ let getEmployees=async()=>
         let res=await axios.get("http://localhost:4000/api/v1/getemps");
         // console.log(res.data.data);
         setemplist(res.data.data)
+      
     }
     catch(err)
     {
@@ -40,7 +42,11 @@ let deleteEmployee=async(id)=>
     {
         let res=await axios.delete(`http://localhost:4000/api/v1/deleteemp/${id}`);
         console.log(res);
-        setshowpopup(true)
+            if(res.status===200)
+            {
+                toast.success(res.data.message)
+            }
+        // setshowpopup(true)
     }
     catch(err)
     {

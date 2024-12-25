@@ -10,24 +10,29 @@ import Home from './components/Home'
 import About from './components/About'
 
 import Navbar from './components/Navbar'
+import { Toaster } from 'react-hot-toast'
+import AuthProvider from './components/AuthProvider'
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
+    <AuthProvider>
+      <Navbar/>
+      <Toaster/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
 
-      <Route path="/addemp" element={<AddEmployee />} />
-      <Route path="/emplist" element={<EmployeeList />} />
-      <Route path="/updateemp" element={<UpdateEmployee />} />
-      <Route path="/empdetails/:eid" element={<EmployeeDetails/>} />
-      <Route path="/login" element={<Login/>} />
-      <Route path="*" element={<Pnf/>} />
+        <Route path="/addemp" element={<AddEmployee />} />
+        <Route path="/emplist" element={<EmployeeList />} />
+        <Route path="/updateemp" element={<UpdateEmployee />} />
+        <Route path="/empdetails/:eid" element={<EmployeeDetails/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="*" element={<Pnf/>} />
 
-    </Routes>
-      
+      </Routes>  
+    </AuthProvider>
+   
     </BrowserRouter>
   )
 }

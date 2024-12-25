@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./CSS/UpdateEmployee.css"
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 function UpdateEmployee() {
 
@@ -19,10 +20,15 @@ function UpdateEmployee() {
             {
               let eid=JSON.parse(localStorage.getItem("emp"))._id
               console.log(eid);
-              let res=await axios.put(`http://localhost:4000/api/v1/updateemp/${eid}`,edata)
+              let res=await axios.put(`http://localhost:4000/api/v1/updateemp/${eid}`,edata);
+              if(res.status===200)
+                {
+                    toast.success(res.data.message)
+                }
             }
             catch(err)
             {
+             
               console.log(err);
             }
         }
